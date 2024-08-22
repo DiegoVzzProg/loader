@@ -153,8 +153,6 @@
     <ClInclude Include="include\ImGui\imstb_rectpack.h" />
     <ClInclude Include="include\ImGui\imstb_textedit.h" />
     <ClInclude Include="include\ImGui\imstb_truetype.h" />
-    <ClInclude Include="modulos\clicker.h" />
-    <ClInclude Include="modulos\reach.h" />
     <ClInclude Include="UI\Modulos\Clicker\clicker.h" />
     <ClInclude Include="UI\Modulos\Header\header.h" />
     <ClInclude Include="UI\ui.h" />
