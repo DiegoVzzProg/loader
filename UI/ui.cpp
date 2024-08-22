@@ -67,7 +67,7 @@ void ui::load() {
     MSG msg;
     ZeroMemory(&msg, sizeof(msg));
 
-    while (true)
+    while (!ui::close)
     {
         if (PeekMessage(&msg, NULL, 0U, 0U, PM_REMOVE))
         {

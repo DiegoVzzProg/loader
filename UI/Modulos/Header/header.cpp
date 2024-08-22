@@ -13,7 +13,11 @@ void header_ui::render() {
         , ImDrawFlags_RoundCornersTop
     );
 
-    draw->AddText(ui::semibold, 17.0f, ImVec2(pos.x + 25, pos.y + 18), ImColor(192, 203, 229), "xanax client");
-    draw->AddText(ui::semibold, 12.0f, ImVec2(pos.x + 109, pos.y + 22), ImColor(192, 203, 229, 150), "v0.0.3");
+    draw->AddText(ui::semibold, 17.0f, ImVec2(pos.x + 25, pos.y + 18), ImColor(235, 245, 251), "xanax client");
+    draw->AddText(ui::semibold, 12.0f, ImVec2(pos.x + 109, pos.y + 22), ImColor(235, 245, 251, 150), "v0.0.3");
 
+    ImGui::SameLine(405);
+    ImGui::SetCursorPosY(ImGui::GetCursorPosY() + 16);
+
+    ui::close = ImGui::Button("X", ImVec2(20,20));
 }

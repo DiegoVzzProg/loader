@@ -6,12 +6,12 @@ namespace clicker_ui {
 }
 
 namespace cg_clicker {
-	static bool enabled = false;
-	static float cps = 12.f;
-	static bool block_hit = false;
-	static bool auto_block_hit = false;
-	static bool only_one_hit = false;
-	static bool auto_click = false;
-	static bool break_blocks = false;
-	static bool shift_disabled_click = false;
+	inline bool enabled = false;
+	inline float cps = 12.f;
+	inline bool block_hit = false;
+	inline bool auto_block_hit = false;
+	inline bool only_one_hit = false;
+	inline bool auto_click = false;
+	inline bool break_blocks = false;
+	inline bool shift_disabled_click = false;
 }

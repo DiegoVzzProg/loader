@@ -2975,21 +2975,21 @@ bool ImGui::SliderScalar(const char* label, ImGuiDataType data_type, void* p_dat
     char value_buf[64];
     const char* value_buf_end = value_buf + DataTypeFormatString(value_buf, IM_ARRAYSIZE(value_buf), data_type, p_data, format);
 
-    float value_float = atof(value_buf);
+    //float value_float = atof(value_buf);
 
-    int grabPosition = 12;
+    //int grabPosition = 12;
 
-    if (value_float < 2.f) {
-        grabPosition-=3;
-    }
+    //if (value_float < 2.f) {
+    //    grabPosition-=3;
+    //}
 
-    window->DrawList->AddRectFilled(ImVec2(frame_bb.Min.x, frame_bb.Min.y - 10), frame_bb.Max, ImColor(32, 33, 35), 2.0f);
-    window->DrawList->AddRectFilled(ImVec2(frame_bb.Min.x, frame_bb.Min.y - 10), ImVec2(grab_bb.Min.x + grabPosition, frame_bb.Max.y), ImColor(22, 118, 243), 2.0f);
+    window->DrawList->AddRectFilled(ImVec2(frame_bb.Min.x, frame_bb.Min.y - 10), ImVec2(frame_bb.Max.x - 9, frame_bb.Max.y), ImColor(32, 33, 35), 2.0f);
+    window->DrawList->AddRectFilled(ImVec2(frame_bb.Min.x, frame_bb.Min.y - 10), ImVec2(grab_bb.Min.x + 3, frame_bb.Max.y), ImColor(22, 118, 243), 2.0f);
 
     RenderText(ImVec2(total_bb.Min.x, total_bb.Min.y - 12), label);
 
     PushStyleColor(ImGuiCol_Text, ImVec4(1.0f, 1.0f, 1.0f, it_anim->second.opacity)); {
-        RenderTextClipped(ImVec2(total_bb.Min.x, total_bb.Min.y - 10), total_bb.Max, value_buf, value_buf_end, NULL, ImVec2(1.f, 0.f));
+        RenderTextClipped(ImVec2(total_bb.Min.x, total_bb.Min.y - 10), ImVec2(total_bb.Max.x - 8, total_bb.Max.y), value_buf, value_buf_end, NULL, ImVec2(1.f, 0.f));
     } PopStyleColor();
 
     IMGUI_TEST_ENGINE_ITEM_INFO(id, label, window->DC.ItemFlags);
