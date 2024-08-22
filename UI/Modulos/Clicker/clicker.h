@@ -3,6 +3,7 @@
 
 namespace clicker_ui {
 	extern void render();
+	extern void render_conditions();
 }
 
 namespace cg_clicker {

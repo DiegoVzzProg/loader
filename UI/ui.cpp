@@ -123,11 +123,11 @@ void ui::colors() {
     const auto colors = style->Colors;
 
     style->WindowBorderSize = 0.f;
-    style->WindowRounding = 0.f;
+    style->WindowRounding = 2.f;
     style->WindowTitleAlign = ImVec2(0.0, 0.0);
-    style->FrameRounding = 0.f;
-    style->GrabRounding = 0.f;
-    style->ChildRounding = 0.f;
+    style->FrameRounding = 2.f;
+    style->GrabRounding = 2.f;
+    style->ChildRounding = 2.f;
     style->ItemSpacing = ImVec2(5, 10);
     style->FramePadding = ImVec2(0, 0);
     style->PopupRounding = 3.f;
@@ -135,13 +135,13 @@ void ui::colors() {
     colors[ImGuiCol_Border] = ImColor(51, 51, 51);
     colors[ImGuiCol_BorderShadow] = ImVec4(0.00f, 0.00f, 0.00f, 0.00f);
 
-#pragma region Titulo
+    #pragma region Titulo
     ImVec4 ColorTitle = ImVec4(0.09f, 0.09f, 0.09f, 1.00f);
 
     colors[ImGuiCol_TitleBg] = ColorTitle;
     colors[ImGuiCol_TitleBgActive] = ColorTitle;
     colors[ImGuiCol_TitleBgCollapsed] = ColorTitle;
-#pragma endregion
+    #pragma endregion
 
     colors[ImGuiCol_MenuBarBg] = ImVec4(0.08f, 0.08f, 0.08f, 0.00f);
     colors[ImGuiCol_ScrollbarBg] = ImVec4(0.15f, 0.15f, 0.15f, 0.00f);
@@ -149,9 +149,9 @@ void ui::colors() {
     colors[ImGuiCol_ScrollbarGrabHovered] = ImVec4(0.10f, 0.10f, 0.10f, 0.00f);
     colors[ImGuiCol_ScrollbarGrabActive] = ImVec4(0.10f, 0.10f, 0.15f, 0.00f);
 
-    colors[ImGuiCol_Button] = ImColor(20, 20, 20);
-    colors[ImGuiCol_ButtonHovered] = ImColor(20, 20, 20);
-    colors[ImGuiCol_ButtonActive] = ImColor(20, 20, 20);
+    colors[ImGuiCol_Button] = ImColor(24, 24, 24);
+    colors[ImGuiCol_ButtonHovered] = ImColor(24, 24, 24);
+    colors[ImGuiCol_ButtonActive] = ImColor(24, 24, 24);
 
     colors[ImGuiCol_Header] = ImVec4(0.20f, 0.20f, 0.20f, 1.00f);
     colors[ImGuiCol_HeaderHovered] = ImVec4(0.13f, 0.13f, 0.13f, 1.00f);
@@ -188,8 +188,19 @@ void ui::render() {
 
     ImGui::Begin("##main", NULL, ImGuiWindowFlags_NoDecoration);
     {
-        header_ui::render();
-        clicker_ui::render();
+        #pragma region header
+        {
+            header_ui::render();
+        }
+        #pragma endregion
+
+        #pragma region clicker
+        {
+            clicker_ui::render();
+            clicker_ui::render_conditions();
+        }
+        #pragma endregion
+
     }
     ImGui::End();
 }

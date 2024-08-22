@@ -30,6 +30,7 @@ namespace ui {
 	static LRESULT CALLBACK WndProc(HWND, UINT, WPARAM, LPARAM);
     inline bool close = false;
 
+
     #pragma region ignorar
     LRESULT CALLBACK WndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam) {
 

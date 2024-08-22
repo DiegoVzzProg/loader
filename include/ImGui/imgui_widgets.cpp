@@ -1114,7 +1114,7 @@ bool ImGui::Checkbox(const char* label, bool* v)
 
     it_anim->second.selected_rect = ImLerp(it_anim->second.selected_rect, *v ? 1.0f : (hovered ? 0.2f : 0.0f), 0.08f * (1.0f - ImGui::GetIO().DeltaTime));
 
-    window->DrawList->AddRectFilled(total_bb.Min, total_bb.Min + ImVec2(square_sz, square_sz), ImColor(32, 33, 35), 3.0f);
+    window->DrawList->AddRectFilled(total_bb.Min, total_bb.Min + ImVec2(square_sz, square_sz), ImColor(35, 36, 38), 3.0f);
     window->DrawList->AddRectFilled(total_bb.Min, total_bb.Min + ImVec2(square_sz, square_sz), ImColor(22 / 255.0f, 118 / 255.0f, 243 / 255.0f, it_anim->second.selected_rect), 3.0f);
     RenderCheckMark(window->DrawList, ImVec2(total_bb.Min.x + 4, (total_bb.Min.y + total_bb.Max.y) / 2 - 4), ImColor(1.0f, 1.0f, 1.0f, it_anim->second.selected_rect), 9.0f);
 
@@ -2983,13 +2983,13 @@ bool ImGui::SliderScalar(const char* label, ImGuiDataType data_type, void* p_dat
     //    grabPosition-=3;
     //}
 
-    window->DrawList->AddRectFilled(ImVec2(frame_bb.Min.x, frame_bb.Min.y - 10), ImVec2(frame_bb.Max.x - 9, frame_bb.Max.y), ImColor(32, 33, 35), 2.0f);
-    window->DrawList->AddRectFilled(ImVec2(frame_bb.Min.x, frame_bb.Min.y - 10), ImVec2(grab_bb.Min.x + 3, frame_bb.Max.y), ImColor(22, 118, 243), 2.0f);
+    window->DrawList->AddRectFilled(ImVec2(frame_bb.Min.x, frame_bb.Min.y - 10), ImVec2(frame_bb.Max.x - 9, frame_bb.Max.y), ImColor(35, 36, 38), 2.0f);
+    window->DrawList->AddRectFilled(ImVec2(frame_bb.Min.x, frame_bb.Min.y - 10), ImVec2(grab_bb.Min.x + 3, frame_bb.Max.y), ImColor(22 , 118 , 243), 2.0f);
 
-    RenderText(ImVec2(total_bb.Min.x, total_bb.Min.y - 12), label);
+    RenderText(ImVec2(total_bb.Min.x, total_bb.Min.y - 13), label);
 
     PushStyleColor(ImGuiCol_Text, ImVec4(1.0f, 1.0f, 1.0f, it_anim->second.opacity)); {
-        RenderTextClipped(ImVec2(total_bb.Min.x, total_bb.Min.y - 10), ImVec2(total_bb.Max.x - 8, total_bb.Max.y), value_buf, value_buf_end, NULL, ImVec2(1.f, 0.f));
+        RenderTextClipped(ImVec2(total_bb.Min.x, total_bb.Min.y - 11), ImVec2(total_bb.Max.x - 8, total_bb.Max.y), value_buf, value_buf_end, NULL, ImVec2(1.f, 0.f));
     } PopStyleColor();
 
     IMGUI_TEST_ENGINE_ITEM_INFO(id, label, window->DC.ItemFlags);
