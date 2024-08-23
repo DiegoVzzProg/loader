@@ -28,7 +28,7 @@ void clicker_ui::render() {
         }
         {
             ImGui::SetCursorPosX(ImGui::GetCursorPosX() + 4);
-            ImGui::SetCursorPosY(ImGui::GetCursorPosY() + 3);
+            ImGui::SetCursorPosY(ImGui::GetCursorPosY() - 7);
             ImGui::SliderFloat("cps:", &cg_clicker::cps, 1, 24, "%.1f", ImGuiSliderFlags_NoInput);
         }
     }
